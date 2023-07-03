@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - uses: dorny/paths-filter@v2.11.1
+        id: filter
+        with:
+          filters: |
+            admin:
+              - 'apps/admin/package.json'
+            api:
+              - 'apps/api/package.json'
+            blog:
+              - 'apps/blog/package.json'
+            storefront:
+              - 'apps/storefront/package.json'
+
+      - run: |
+          echo "Admin: ${{ steps.filter.outputs.admin }}"
+          echo "API: ${{ steps.filter.outputs.api }}"
+          echo "Blog: ${{ steps.filter.outputs.blog }}"
+          echo "Storefront: ${{ steps.filter.outputs.storefront }}"
+          echo "All: ${{ steps.filter.outputs.changes }}"
