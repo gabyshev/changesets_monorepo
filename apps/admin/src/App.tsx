@@ -10,7 +10,7 @@ function App() {
         <span>Kitchen Sink</span>
       </h1>
       <CounterButton />
-      <p className="description">
+      <p className="description bold">
         Built With{" "}
         <NewTabLink href="https://turbo.build/repo">Turborepo</NewTabLink> +{" "}
         <NewTabLink href="https://vitejs.dev/">Vite</NewTabLink>
