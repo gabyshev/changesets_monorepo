@@ -1,0 +1,15 @@
+name: path check
+
+on:
+  push:
+    paths:
+      - "apps/**/pacakge.json"
+    branches:
+      - main
+
+jobs:
+  path-check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "it works!"
