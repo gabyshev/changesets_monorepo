@@ -3,7 +3,7 @@ name: path check
 on:
   push:
     paths:
-      - "apps/**/pacakge.json"
+      - "apps/**/package.json"
     branches:
       - main
 
